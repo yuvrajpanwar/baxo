@@ -1,0 +1,9 @@
+RewriteEngine On # We are turning on the rewrite engine on our server
+
+
+
+RewriteRule    ^details-(.*)?$             ./single-post.php?tid=$1               [NC,L] 
+
+RewriteRule    ^section-(.*)?$             ./news-category.php?tid=$1             [NC,L]
+
+
