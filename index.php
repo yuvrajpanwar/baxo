@@ -23,7 +23,7 @@ $videoPostContent=video_post_content($db,$offset);
         <div class="trending-news-box">
             <div class="row gx-5">
                 <div class="col-xxl-2 col-xl-3 col-lg-3 col-md-4">
-                    <h4>Breaking News</h4>
+                    <h4>Breaking News </h4>
                     <div class="trending-prev"><i class="flaticon-left-arrow"></i></div>
                     <div class="trending-next"><i class="flaticon-right-arrow"></i></div>
                 </div>
