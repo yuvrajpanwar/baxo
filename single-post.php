@@ -113,7 +113,7 @@ if($nextPostId>0)
 </div>
 
 
-<div class="news-details-wrap pb-100 pt-0">
+<div class="news-details-wrap pt-0">
     <div class="container">
         <div class="row gx-55 gx-5">
             <div class="col-lg-8">

@@ -34,7 +34,7 @@
 		
 		}
 		if(isset($_POST['submit']) == 'Save')
-
+		{
 
 			$name=$_POST['title'];
 			if($name=="")
@@ -114,8 +114,8 @@
 				
 			}
 		}
-		
-	}
+	}	
+	
 	 catch(PDOException $ex) 
 	 {
 			echo "An Error occured! Please contact Administrator.";

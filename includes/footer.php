@@ -1,6 +1,6 @@
 <div class="container-fluid bg-dark text-white  pt-5 pb-5">
-<div class="row d-flex justify-content-center">
-            <div class="col ">
+<div class="row d-flex justify-content-center gx-5">
+            <div class="p-5 col">
                 <div class="">
                     <div>
                         <h2 class="section-title text-white">About Us</h2>
@@ -20,7 +20,7 @@
                 </div>
             </div>
 
-            <div class="col text-center">
+            <div class="p-5 col">
 
                 <div class="">
                     <div>
@@ -51,7 +51,7 @@
 
             </div>
 
-            <div class="col text-center">
+            <div class="p-5 col">
 
                 <div class="">
                     <div>
@@ -71,18 +71,19 @@
 
                         <li><a class="text-white" href="#">FAQ</a></li>
 
-                        <li class="d-flex justify-content-center mt-4"><div class="col-lg-4 text-center ">
-                    <ul class="social-profile list-style">
-                        <li><a class="text-white" href="https://www.fb.com/" target="_blank"><i class="flaticon-facebook-1"></i></a></li>
-                        <li><a class="text-white" href="https://www.twitter.com/" target="_blank"><i class="flaticon-twitter-1"></i></a>
+                        <li class="d-flex  mt-4">
+                            <div class="col-lg-4">
+                                <ul class="d-flex" style="padding-left:0">
+                                    <li style="margin-right:14px"><a class="text-white" href="https://www.fb.com/" target="_blank"><i class="flaticon-facebook-1"></i></a></li>
+                                    <li style="margin-right:14px"><a class="text-white" href="https://www.twitter.com/" target="_blank"><i class="flaticon-twitter-1"></i></a></li>
+                                    
+                                    <li style="margin-right:14px"><a class="text-white" href="https://www.instagram.com/" target="_blank"><i
+                                                class="flaticon-instagram-2"></i></a></li>
+                                    <!-- <li><a href="https://www.linkedin.com/" target="_blank"><i class="flaticon-linkedin"></i></a> -->
+                                    
+                                </ul>
+                            </div>
                         </li>
-                        <li><a class="text-white" href="https://www.instagram.com/" target="_blank"><i
-                                    class="flaticon-instagram-2"></i></a></li>
-                        <!-- <li><a href="https://www.linkedin.com/" target="_blank"><i class="flaticon-linkedin"></i></a> -->
-                        </li>
-                    </ul>
-                </div>
-            </li>
                            
                     </ul>
 

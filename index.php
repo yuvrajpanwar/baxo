@@ -131,7 +131,7 @@ $videoPostContent=video_post_content($db,$offset);
 
             <div class="news-col-two">
 
-                <div class="news-card-four">
+                <div class="news-card-eight">
                     <?php $postContent=post_content($db,$categoryList[5]['id'],$offset=0,$limit=8);?>
                     <img src="./post_images/<?=$postContent['2']['post_image']?>" alt="Image">
                     <div class="news-card-info">
@@ -1068,7 +1068,7 @@ $videoPostContent=video_post_content($db,$offset);
     </div> -->
 
 
-    <div class="video-news-wrap pt-100 pb-75">
+    <div class="video-news-wrap pt-5 pb-75">
         <div class="container-fluid">
 
             <div class="row mb-50 align-items-center">
@@ -1081,10 +1081,11 @@ $videoPostContent=video_post_content($db,$offset);
                             class="flaticon-right-arrow"></i></a>
                 </div>
             </div>
-            <div class="scrollscreen featured-video-box">
-                <div class="row gx-4">
 
-                    <div class="col-xl-7">
+            <div class="featured-video-box">
+                <div class="row ">
+
+                    <div class="col-xl-6">
 
                         <div class="news-card-four">
                             <img src="./post_images/<?=$videoPostContent[0]['post_image']?>" alt="Image">
@@ -1138,11 +1139,11 @@ $videoPostContent=video_post_content($db,$offset);
 
                     </div>
 
-                    <div class="col-xl-5">
-                        <div class="row">
+                    <div class="col-xl-6">
+                        
 
                             <?php
-                                for($i=2;$i<5;$i++)
+                                for($i=2;$i<4;$i++)
                                 {
                                 $videoLink=$videoPostContent[$i]['video_link'];							                                    
                                 $pattern = "/(?:www\.|)(?:youtube\.com|m\.youtube\.com|youtu\.|youtube-nocookie\.com)/i";
@@ -1153,8 +1154,8 @@ $videoPostContent=video_post_content($db,$offset);
                                     }
                                     
                                 ?>
-                                    <div class="col-xl-12 col-lg-6">
-                                        <div class="news-card-eight">
+                                    
+                                        <div class="news-card-four">
                                             <img src="post_images/<?=$videoPostContent[$i]['post_image']?>" alt="Image">
                                             <a class="play-now" href="#quickview-modal" onclick='change_link("<?=$vidcode?>");' data-bs-toggle="modal">
                                                 <i class="flaticon-play-button"></i>
@@ -1167,14 +1168,15 @@ $videoPostContent=video_post_content($db,$offset);
                                                 </ul>
                                             </div>
                                         </div>
-                                    </div>
+                                    
                                 <?php
                                 }
                             
                             ?>
 
-                        </div>
+                        
                     </div>
+
                 </div>
             </div>
 
@@ -1183,7 +1185,7 @@ $videoPostContent=video_post_content($db,$offset);
                     <div class="swiper-wrapper">
 
                         <?php
-                            for($i=5;$i<9;$i++)
+                            for($i=4;$i<9;$i++)
                             {
                             $videoLink=$videoPostContent[$i]['video_link'];							                                    
                             $pattern = "/(?:www\.|)(?:youtube\.com|m\.youtube\.com|youtu\.|youtube-nocookie\.com)/i";
@@ -1254,7 +1256,7 @@ $videoPostContent=video_post_content($db,$offset);
                                             </div>
                                             <div class="news-card-info">
                                                 <h3><a href="details-<?=base64_encode($sliderContent[$i]['id'])?>"><?=format_description($sliderContent[$i]['title'], $numberOfWords=15)?></a></h3>
-                                                <p><?=format_description($sliderContent[$i]['description'],20)?></p>
+                                                <!-- <p><?=format_description($sliderContent[$i]['description'],20)?></p> -->
                                                 <ul class="news-metainfo list-style">
                                                     <li><i class="fi fi-rr-calendar-minus"></i><a href="#"><?=$sliderContent[$i]['created_on']?></a></li>
                                                 </ul>
