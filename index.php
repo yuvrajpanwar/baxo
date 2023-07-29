@@ -1412,8 +1412,6 @@ $videoPostContent=video_post_content($db,$offset);
 
     <?php include('./includes/footer.php');?>
 
-    
-
     <button type="button" id="backtotop" class="position-fixed text-center border-0 p-0">
         <i class="ri-arrow-up-line"></i>
     </button>
@@ -1497,7 +1495,6 @@ $videoPostContent=video_post_content($db,$offset);
 
     });
 </script>
-
 
 </body>
 

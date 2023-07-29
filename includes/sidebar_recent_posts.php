@@ -9,7 +9,7 @@
         foreach($sliderContent as $key=>$value)
         {
             $catImg=$value['post_image'];
-            $catTitle=strip_tags($value['title']);
+            $catTitle=format_description( strip_tags($value['title']) , 15);
             $catDate=date("d M Y",strtotime($value['created_on']));
             $catAuthor=$value['author'];
             $catId=base64_encode($value['id']);

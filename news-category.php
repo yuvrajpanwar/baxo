@@ -60,7 +60,7 @@ if(count($categoryList)>0)
 	                            foreach($postContent as $key=>$value)
 	                            {
                                     $img=$value['post_image'];
-                                    $title=strip_tags($value['title']);                                  
+                                    $title=format_description(strip_tags($value['title']),20);                                  
                                     $id=base64_encode($value['id']);
                                     $date=date("d M Y",strtotime($value['created_on']));
                                     $author=$value['author'];
