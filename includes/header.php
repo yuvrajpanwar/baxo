@@ -378,10 +378,10 @@ $categoryList=category_listing($db);
                     <img class="logo-dark" src="assets/img/logo-white.webp" alt="logo">
                 </a>
 
-                <button type="button" class="search-btn d-lg-none" data-bs-toggle="modal" data-bs-target="#searchModal">
+                <!-- <button type="button" class="search-btn d-lg-none" data-bs-toggle="modal" data-bs-target="#searchModal">
                     <i class="flaticon-loupe"></i>
                 
-                </button>
+                </button> -->
 
                 <a class="navbar-toggler" data-bs-toggle="offcanvas" href="#navbarOffcanvas" role="button"
                     aria-controls="navbarOffcanvas">
@@ -468,86 +468,11 @@ $categoryList=category_listing($db);
                        
                         <li class="nav-item"><a href="video-news.php" class=" nav-link">वीडियो</a></li>
 
-                        <!-- <li class="nav-item">
-                            <a href="javascript:void(0)" class="dropdown-toggle nav-link">
-                                Pages
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li class="nav-item">
-                                    <a href="about.html" class="nav-link">
-                                        About Us
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="contact.html" class="nav-link">
-                                        Contact Us
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="team.html" class="nav-link">
-                                        Team
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="author.html" class="nav-link">
-                                        Author
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="privacy-policy.html" class="nav-link">
-                                        Privacy Policy
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="terms-conditions.html" class="nav-link">
-                                        Terms & Conditions
-                                    </a>
-                                </li>
-                            </ul>
-                        </li> -->
-
-                        <!-- <li class="nav-item">
-                            <a class="nav-link dropdown-toggle" href="#">अन्य</a>
-                            <ul class="dropdown-menu">
-                                <?php
-                                        $second_count=1;
-                                        foreach($categoryList as $menu_category_second_index => $fetch_menu_category_second)
-                                        {
-                                            $menu_category_id =$fetch_menu_category_second ['id'];
-                                            $menuencode_cat_id=base64_encode($menu_category_id);
-                                            $menu_category_name =$fetch_menu_category_second ['name'];
-
-											if($second_count==16 || $second_count==87 || $second_count==88 ||$second_count==89 ||$second_count==97 ||$second_count==100 )
-                                            {
-                                                echo "<li class='nav-item'><a class='nav-link' href=\"$redirectPath_site/section-$menuencode_cat_id\">$menu_category_name</a></li>";
-                                            }
-                                            if($second_count>101)
-                                            {
-                                            break;
-                                            }
-                    
-                                        $second_count++;
-                                   }
-                                
-                                ?> 
-                             </ul>
-                        </li> -->
+                 
 
                     </ul>
 
-                    <!-- <div class="others-option d-flex align-items-center">
-
-                        <div class="option-item">
-                            <button type="button" class="search-btn" data-bs-toggle="modal"
-                                data-bs-target="#searchModal">
-                                <i class="flaticon-loupe"></i>
-                            </button>
-                        </div>
-
-                        <div class="option-item">
-                            <a href="login.html" class="btn-two">Sign In</a>
-                        </div>
-                    </div> -->
+                    
 
                 </div>
             </nav>
@@ -664,18 +589,17 @@ $categoryList=category_listing($db);
                 <ul class="contact-info list-style">
                     <li>
                         <i class="ri-map-pin-fill"></i>
-                        <p>28/A Street, New York, USA</p>
+                        <p>20 G-Block, Rishivihar, Dehradun</p>
+                        <p>Uttarakhand</p>
                     </li>
                     <li>
                         <i class="ri-mail-fill"></i>
                         <a
-                            href="https://templates.hibootstrap.com/cdn-cgi/l/email-protection#91f9f4fdfdfed1f3f0e9febff2fefc"><span
-                                class="__cf_email__"
-                                data-cfemail="f49c9198989bb496958c9bda979b99">[email&#160;protected]</span></a>
+                            href="mailto:yogipanwar173@gmail.com">YogiPanwar173@gmail.com</span></a>
                     </li>
                     <li>
                         <i class="ri-phone-fill"></i>
-                        <a href="tel:1800123456789">+1 800 123 456 789</a>
+                        <a href="tel:8126935236">8126935236</a>
                     </li>
                 </ul>
                 <ul class="social-profile list-style">

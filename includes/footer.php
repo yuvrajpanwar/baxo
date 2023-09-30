@@ -11,11 +11,11 @@
                     </div>
                     <hr>
                     <ul class="nav my-2">
-                        <li> <i class="fi fi-rr-house-chimney"></i> <span>Rahul Kumar</span>
-                        <span>79, Kanwali Dehradun
-                        Uttarakhand -248001</span> </li>
-                        <li> <i class="fi fi-rr-envelope"></i> <a>khabarnewindia@gmail.com</a> </li>
-                        <li> <i class="fi fi-rr-phone-flip"></i> <a href="tel:+123456789"><span class="text-white">+91-9548859920</span></a> </li>
+                        <li  style="width:100%"><p> <i class="fi fi-rr-house-chimney"></i> <span>Yuvraj Singh Panwar,</span>
+                        <span> 20 G-Block Rishivihar, Dehradun
+                        Uttarakhand-248001</span> </p></li>
+                        <li style="width:100%"><p> <i class="fi fi-rr-envelope"></i> <a href="mailto:yogipanwar@gmail.com"><span class = "text-white">yogipanwar@gmail.com</span></a> </p> </li>
+                        <li style="width:100%"><p> <i class="fi fi-rr-phone-flip"></i> <a href="tel:8126935236"><span class="text-white">8126935236</span></a> </p></li>
                     </ul>
                 </div>
             </div>
@@ -91,24 +91,5 @@
 
             </div>
 </div>
-
-<!-- <div class="footer-wrap">
-            <div class="row align-items-center">
-                <div class="col-lg-4">
-                    <p class="copyright-text">© 2023 <span>Baxo</span> All Rights Reserved.</p>
-                </div>
-
-                
-
-                <div class="col-lg-4">
-                    <div class="footer-right">
-                        <button class="subscribe-btn" data-bs-toggle="modal" data-bs-target="#newsletter-popup">Become a
-                            subscriber<i class="flaticon-right-arrow"></i></button>
-                        <p>Get all the latest posts delivered straight to your inbox.</p>
-                    </div>
-                </div>
-
-            </div>
-</div> -->
 
 </div>
