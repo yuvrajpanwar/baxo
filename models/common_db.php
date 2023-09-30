@@ -74,7 +74,7 @@ function video_post_content($db,$offset)
 }
 function get_popular_post($db)
 {
-    $popular_post=$db->query("select khabarnewindia_post_records.*,khabarnewindia_post_view_records.id as post_view_records_id ,khabarnewindia_post_view_records.counts from khabarnewindia_post_records,khabarnewindia_post_view_records where khabarnewindia_post_records.id=khabarnewindia_post_view_records.post_id and khabarnewindia_post_records.status=1 and khabarnewindia_post_records.news_type='Text News' and khabarnewindia_post_records.is_enabled='Y' and khabarnewindia_post_records.is_deleted='N'  and khabarnewindia_post_records.created_on <= NOW()order by rand() desc limit 10");
+    $popular_post=$db->query("select khabarnewindia_post_records.*,khabarnewindia_post_view_records.id as post_view_records_id ,khabarnewindia_post_view_records.counts from khabarnewindia_post_records,khabarnewindia_post_view_records where khabarnewindia_post_records.id=khabarnewindia_post_view_records.post_id and khabarnewindia_post_records.status=1 and khabarnewindia_post_records.news_type='Text News' and khabarnewindia_post_records.is_enabled='Y' and khabarnewindia_post_records.is_deleted='N'  and khabarnewindia_post_records.created_on <= NOW() order by id desc limit 10");
     $row_popular=$popular_post->rowCount();
     $row_popular_array=$popular_post->fetchAll(\PDO::FETCH_ASSOC);
     return $row_popular_array;
