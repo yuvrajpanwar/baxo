@@ -1490,6 +1490,8 @@ $videoPostContent=video_post_content($db,$offset);
 
             img.onerror = () => {
             images[i].setAttribute("src","/baxo/default_img.jpg");
+            // images[i].setAttribute("src","/default_img.jpg");
+
             };      
         }
 

@@ -35,11 +35,11 @@ date_default_timezone_set('Asia/Kolkata');
 
 				
 				if(preg_match("/.com/i",$_SERVER['SERVER_NAME'])){
-					$this->host = 'localhost';
-					$this->dbName = 'khabarnewindia_db';
+					$this->host = 'sql201.infinityfree.com';
+					$this->dbName = 'if0_35138003_khabarnewindia_db';
 					$this->charSet = 'utf8';
-					$this->dbUser = 'root';
-					$this->dbPass = '';
+					$this->dbUser = 'if0_35138003';
+					$this->dbPass = '5v6WDP0FcS1Yw1';
 				}elseif(preg_match("/localhost/i",$_SERVER['SERVER_NAME'])){
 					$this->host = 'localhost';
 					$this->dbName = 'khabarnewindia_db';
@@ -53,6 +53,26 @@ date_default_timezone_set('Asia/Kolkata');
 					$this->dbUser = 'root';
 					$this->dbPass = '';
 				}
+
+				// if(preg_match("/.com/i",$_SERVER['SERVER_NAME'])){
+				// 	$this->host = 'sql201.infinityfree.com';
+				// 	$this->dbName = 'if0_35138003_khabarnewindia_db';
+				// 	$this->charSet = 'utf8';
+				// 	$this->dbUser = 'if0_35138003';
+				// 	$this->dbPass = '5v6WDP0FcS1Yw1';
+				// }elseif(preg_match("/localhost/i",$_SERVER['SERVER_NAME'])){
+				// 	$this->host = 'sql201.infinityfree.com';
+				// 	$this->dbName = 'if0_35138003_khabarnewindia_db';
+				// 	$this->charSet = 'utf8';
+				// 	$this->dbUser = 'if0_35138003';
+				// 	$this->dbPass = '5v6WDP0FcS1Yw1';
+				// }else {
+				// 	$this->host = 'sql201.infinityfree.com';
+				// 	$this->dbName = 'if0_35138003_khabarnewindia_db';
+				// 	$this->charSet = 'utf8';
+				// 	$this->dbUser = 'if0_35138003';
+				// 	$this->dbPass = '5v6WDP0FcS1Yw1';
+				// }
 				
 				return true;
 		}

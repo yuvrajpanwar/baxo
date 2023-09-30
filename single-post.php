@@ -409,7 +409,9 @@ if($nextPostId>0)
             img.src = images[i].getAttribute("src");
 
             img.onerror = () => {
-            images[i].setAttribute("src","/baxo/default_img.jpg");
+            // images[i].setAttribute("src","/baxo/default_img.jpg");
+            images[i].setAttribute("src","/default_img.jpg");
+
             };      
         }
 

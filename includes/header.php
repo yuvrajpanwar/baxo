@@ -403,7 +403,7 @@ $categoryList=category_listing($db);
                         </li>
                        
                         <li class="nav-item">
-                            <a class="nav-link dropdown-toggle" href="section-<?=base64_encode($categoryList[0]['id'])?>"><?=$categoryList[0]['name']?> </a>
+                            <a class="nav-link dropdown-toggle nav-item" href="section-<?=base64_encode($categoryList[0]['id'])?>"><b><?=$categoryList[0]['name']?></b> </a>
                             <ul class="dropdown-menu">
                                     <?php
                                         $first_count=1;
@@ -415,7 +415,7 @@ $categoryList=category_listing($db);
 
                                             if($first_count==78 || $first_count==73|| $first_count==4 ||$first_count==81||$first_count==6||$first_count==51||$first_count==8||$first_count==63||$first_count==70||$first_count==34||$first_count==39||$first_count==13||$first_count==14||$first_count==84)
                                             {
-                                                echo "<li class='nav-item'><a class='nav-link' href=\"$redirectPath_site/section-$menuencode_cat_id\">$menu_category_name</a></li>";
+                                                echo "<li class='nav-item'><a class='nav-link' href=\"/section-$menuencode_cat_id\">$menu_category_name</a></li>";
                                             }
 
                                             $first_count++;
@@ -426,7 +426,7 @@ $categoryList=category_listing($db);
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link dropdown-toggle" href="section-<?=base64_encode($categoryList[14]['id'])?>"><?=$categoryList[14]['name']?></a>
+                            <a class="nav-link dropdown-toggle nav-item" href="section-<?=base64_encode($categoryList[14]['id'])?>"><b><?=$categoryList[14]['name']?></b></a>
                             <ul class="dropdown-menu">
                                 <?php
                                         $second_count=1;
@@ -438,7 +438,7 @@ $categoryList=category_listing($db);
 
 											if($second_count>=97)
                                             {
-                                                echo "<li class='nav-item'><a class='nav-link' href=\"$redirectPath_site/section-$menuencode_cat_id\">$menu_category_name</a></li>";
+                                                echo "<li class='nav-item'><a class='nav-link' href=\"/section-$menuencode_cat_id\">$menu_category_name</a></li>";
                                             }
                                             if($second_count>101)
                                             {
@@ -520,7 +520,7 @@ $categoryList=category_listing($db);
 
                                             if($first_count==78 || $first_count==73|| $first_count==4 ||$first_count==81||$first_count==6||$first_count==51||$first_count==8||$first_count==63||$first_count==70||$first_count==34||$first_count==39||$first_count==13||$first_count==14||$first_count==84)
                                             {
-                                                echo "<div class='accordion-item'><a class='accordion-link' href=\"$redirectPath_site/section-$menuencode_cat_id\">$menu_category_name</a></div>";
+                                                echo "<div class='accordion-item'><a class='accordion-link' href=\"/section-$menuencode_cat_id\">$menu_category_name</a></div>";
                                             }
 
                                             $first_count++;
@@ -551,7 +551,7 @@ $categoryList=category_listing($db);
 
 											if($second_count>=97)
                                             {
-                                                echo "<div class='accordion-item'><a class='accordion-link' href=\"$redirectPath_site/section-$menuencode_cat_id\">$menu_category_name</a></div>";
+                                                echo "<div class='accordion-item'><a class='accordion-link' href=\"/section-$menuencode_cat_id\">$menu_category_name</a></div>";
                                             }
                                             if($second_count>101)
                                             {

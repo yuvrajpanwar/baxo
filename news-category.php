@@ -232,37 +232,14 @@ if(count($categoryList)>0)
                 <div class="col-lg-4 ">
                     <div class="sidebar">
 
-                        <!-- <div class="sidebar-widget-two">
-                            <form action="#" class="search-box-widget">
-                                <input type="search" placeholder="Search">
-                                <button type="submit">
-                                    <i class="fi fi-rr-search"></i>
-                                </button>
-                            </form>
-                        </div> -->
 
                         <!-- sidebar-widget-category  -->
                         <?php include('includes/sidebar_categories.php');?>
 
                         <!-- sidebar-widget-recent_posts  -->
-                        <?php include('includes/sidebar_recent_posts.php');?>
+                        <?php include_once('includes/sidebar_recent_posts.php');?>
 
-                        <!-- <div class="sidebar-widget">
-                            <h3 class="sidebar-widget-title">Popular Tags</h3>
-                            <ul class="tag-list list-style">
-                                <li><a href="news-by-tags.html">BUSINESS</a></li>
-                                <li><a href="news-by-tags.html">FOOD</a></li>
-                                <li><a href="news-by-tags.html">SCIENCE</a></li>
-                                <li><a href="news-by-tags.html">LIFESTYLE</a></li>
-                                <li><a href="news-by-tags.html">SPORTS</a></li>
-                                <li><a href="news-by-tags.html">PHOTO</a></li>
-                                <li><a href="news-by-tags.html">TECHNOLOGY</a></li>
-                                <li><a href="news-by-tags.html">CONTENT</a></li>
-                                <li><a href="news-by-tags.html">FEATURED</a></li>
-                                <li><a href="news-by-tags.html">AUDIO</a></li>
-                                <li><a href="news-by-tags.html">FASHION</a></li>
-                            </ul>
-                        </div> -->
+                        
 
                     </div>
                 </div>
@@ -346,7 +323,9 @@ if(count($categoryList)>0)
             img.src = images[i].getAttribute("src");
 
             img.onerror = () => {
-            images[i].setAttribute("src","/baxo/default_img.jpg");
+            // images[i].setAttribute("src","/baxo/default_img.jpg");
+            images[i].setAttribute("src","/default_img.jpg");
+
             };      
         }
 
