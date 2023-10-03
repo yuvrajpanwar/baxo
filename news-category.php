@@ -75,8 +75,9 @@ if(count($categoryList)>0)
                         <div class="col-md-6">
                             <div class="news-card-thirteen">
                                 <div class="news-card-img">
-                                    <img src="post_images/<?=$img?>" alt="Iamge">
-                                    <!-- <a href="section-<?=base64_encode($tid)?>" class="news-cat"><?=$categoryName?></a> -->
+                                    <a href="details-<?=$id?>">
+                                        <img src="post_images/<?=$img?>" alt="Iamge">
+                                    </a>
                                 </div>
                                 <div class="news-card-info">
                                     <h3><a href="details-<?=$id?>"><?=$title?></a></h3>
@@ -99,9 +100,7 @@ if(count($categoryList)>0)
 
                  
 
-                        <!-- <li><a class="active" href="business.html">01</a></li>
-                        <li><a href="business.html">02</a></li>
-                        <li><a href="business.html">03</a></li> -->
+                        
 
                         <!-- <?php 
                             $next_posts=post_content($db,$tid,$offset+8,$limit);
@@ -159,10 +158,12 @@ if(count($categoryList)>0)
             for (var i = 0; i < next_posts.length; i++) {
               // Create the HTML for the new post and append it to the container
               var new_post =
-                '<div class="col-md-6"><div class="news-card-thirteen"><div class="news-card-img"><img src="post_images/' +
+                '<div class="col-md-6"><div class="news-card-thirteen"><div class="news-card-img"><a href="details-' +
+                btoa(next_posts[i].id) +
+                '">' + '<img src="post_images/' +
                 next_posts[i].post_image +
-                '" alt="Image"></div><div class="news-card-info"><h3><a href="details-' +
-                next_posts[i].id +
+                '" alt="Image"></a></div><div class="news-card-info"><h3><a href="details-' +
+                btoa(next_posts[i].id) +
                 '">' +
                 next_posts[i].title +
                 '</a></h3><ul class="news-metainfo list-style"><li><i class="fi fi-rr-calendar-minus"></i><a href="#">' +
@@ -257,32 +258,7 @@ if(count($categoryList)>0)
         <i class="ri-arrow-up-line"></i>
     </button>
 
-    <!-- <div class="modal fade" id="newsletter-popup" tabindex="-1" aria-labelledby="newsletter-popup" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-xl">
-            <div class="modal-content">
-                <button type="button" class="btn_close" data-bs-dismiss="modal" aria-label="Close">
-                    <i class="fi fi-rr-cross"></i>
-                </button>
-                <div class="modal-body">
-                    <div class="newsletter-bg bg-f"></div>
-                    <div class="newsletter-content">
-                        <img src="assets/img/newsletter-icon.webp" alt="Image" class="newsletter-icon">
-                        <h2>Join Our Newsletter & Read The New Posts First</h2>
-                        <form action="#" class="newsletter-form">
-                            <input type="email" placeholder="Email Address">
-                            <button type="button" class="btn-one">Subscribe<i class="flaticon-arrow-right"></i></button>
-                        </form>
-                        <div class="form-check checkbox">
-                            <input class="form-check-input" type="checkbox" id="test_21">
-                            <label class="form-check-label" for="test_21">
-                                I've read and accept <a href="privacy-policy.html">Privacy Policy</a>
-                            </label>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
+
 
     <div class="modal fade" id="quickview-modal" data-bs-keyboard="false" tabindex="-1"
         aria-labelledby="quickview-modal" aria-hidden="true">
@@ -323,7 +299,6 @@ if(count($categoryList)>0)
             img.src = images[i].getAttribute("src");
 
             img.onerror = () => {
-            // images[i].setAttribute("src","/baxo/default_img.jpg");
             images[i].setAttribute("src","/default_img.jpg");
 
             };      
@@ -335,6 +310,5 @@ if(count($categoryList)>0)
 
 </body>
 
-<!-- Mirrored from templates.hibootstrap.com/baxo/default/business.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 28 Jun 2023 07:00:53 GMT -->
 
 </html>

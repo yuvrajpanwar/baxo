@@ -19,9 +19,11 @@
     ?>
 
                 <div class="news-card-one">
-                    <div class="news-card-img">
-                        <img src="post_images/<?=$catImg?>" alt="Image">
-                    </div>
+                    <a href="details-<?=$catId?>">
+                        <div class="news-card-img">
+                            <img src="post_images/<?=$catImg?>" alt="Image">
+                        </div>
+                    </a>
                     <div class="news-card-info">
                         <h3><a href="details-<?=$catId?>"><?=$catTitle?></a></h3>
                         <ul class="news-metainfo list-style">

@@ -45,9 +45,9 @@ $videoPostContent=video_post_content($db,$offset);
                                     if($count<5)
                                     echo"
                                         <div class='swiper-slide news-card-one'>
-                                            <div class='news-card-img'>
+                                            <a href='details-$catId'><div class='news-card-img'>
                                                 <img src='./post_images/$catImg' alt='Image'>
-                                            </div>
+                                                </div></a>
                                             <div class='news-card-info'>
                                                 <h3><a href='details-$catId'>".format_description($catTitle, 15)."</a></h3>
                                                 <ul class='news-metainfo list-style'>
@@ -75,18 +75,20 @@ $videoPostContent=video_post_content($db,$offset);
                 <?php 
                 $postContent=post_content($db,$categoryList[5]['id'],$offset=0,$limit=8); 
                 echo '
-                <div class="news-card-two">
-                <div class="news-card-img">
-                    <img  src="./post_images/'.$postContent[0]['post_image'].'" alt="Image">
-                    <a href="section-' . base64_encode($categoryList[5]['id']) . '" class="news-cat">' .$categoryList[5]['name']. '</a>
-                </div>
-                <div class="news-card-info">
-                    <h3><a href="details-'.  base64_encode($postContent['0']['id'])  . '">'.format_description($postContent[0]['title'], 15). '</a></h3>
-                    <ul class="news-metainfo list-style">
-                        <li><i class="fi fi-rr-calendar-minus"></i><a href="#">'.$postContent[0]['created_on'].'</a></li>
-                    </ul>
-                </div>
-                </div>
+                <a href="details-'.  base64_encode($postContent['0']['id'])  . '">
+                    <div class="news-card-two">
+                        <div class="news-card-img">
+                            <img  src="./post_images/'.$postContent[0]['post_image'].'" alt="Image">
+                            <a href="section-' . base64_encode($categoryList[5]['id']) . '" class="news-cat">' .$categoryList[5]['name']. '</a>
+                        </div>
+                        <div class="news-card-info">
+                            <h3><a href="details-'.  base64_encode($postContent['0']['id'])  . '">'.format_description($postContent[0]['title'], 15). '</a></h3>
+                            <ul class="news-metainfo list-style">
+                                <li><i class="fi fi-rr-calendar-minus"></i><a href="#">'.$postContent[0]['created_on'].'</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </a>
                 ';
                 ?>
 
@@ -108,20 +110,28 @@ $videoPostContent=video_post_content($db,$offset);
                     if($count<=1)
                     {
                     ?>
-                <div class="news-card-three">
-                    <div class="news-card-img">
-                        <img src="./post_images/<?=$catImg?>" alt="Image">
-                    </div>
-                    <div class="news-card-info">
-                        <a href="section-<?=base64_encode($categoryList['0']['id'])?>" class="news-cat"><?=$categoryList['0']['name']?></a>
-                        <h3><a href="details-<?=$catId?>"><?=$catTitle?></a>
-                        </h3>
-                        <ul class="news-metainfo list-style">
-                            <li><i class="fi fi-rr-calendar-minus"></i><a href="#"><?=$catDate?></a></li>
-                        </ul>
-                    </div>
-                </div>
-                         <?php
+
+                        
+                            <div class="news-card-three">
+                               
+                                    <div class="news-card-img">
+                                        <a href="details-<?=$catId?>">
+                                            <img src="./post_images/<?=$catImg?>" alt="Image">
+                                        </a>
+                                    </div>
+                                    <div class="news-card-info">
+                                        <a href="section-<?=base64_encode($categoryList['0']['id'])?>" class="news-cat"><?=$categoryList['0']['name']?></a>
+                                        <h3><a href="details-<?=$catId?>"><?=$catTitle?></a>
+                                        </h3>
+                                        <ul class="news-metainfo list-style">
+                                            <li><i class="fi fi-rr-calendar-minus"></i><a href="#"><?=$catDate?></a></li>
+                                        </ul>
+                                    </div> 
+                                
+                            </div> 
+                    
+
+                        <?php
                         }
                     }
                 } 
@@ -130,23 +140,27 @@ $videoPostContent=video_post_content($db,$offset);
             </div>
 
             <div class="news-col-two">
-
+            
                 <div class="news-card-eight">
+                
                     <?php $postContent=post_content($db,$categoryList[5]['id'],$offset=0,$limit=8);?>
-                    <img src="./post_images/<?=$postContent['2']['post_image']?>" alt="Image">
+                    
+                        <img src="./post_images/<?=$postContent['2']['post_image']?>" alt="Image">
+                    
                     <div class="news-card-info">
                         <h3 style="font-size: 19px;"><a href="details-<?=base64_encode($postContent['2']['id'])?>"><?=format_description($postContent['2']['title'], $numberOfWords=20)?></a></h3>
                         <ul class="news-metainfo list-style">
                             <li><i class="fi fi-rr-calendar-minus"></i><a href=""><?=$postContent['2']['created_on']?></a></li>
                         </ul>
                     </div>
+                
                 </div>
 
                 <div class="news-card-five">
                     <?php $postContent=post_content($db,$categoryList[0]['id'],$offset=0,$limit=8);
                     $catDesc=format_description(strip_tags($postContent[3]['description']),$numberOfWords=20);?>
                     <div class="news-card-img">
-                        <img src="post_images/<?=$postContent[3]['post_image']?>" alt="Image" class='small-img-cards-2col'>
+                        <a href="details-<?=base64_encode($postContent[3]['id'])?>"><img src="post_images/<?=$postContent[3]['post_image']?>" alt="Image" class='small-img-cards-2col'></a>
                         <a href="section-<?=base64_encode($categoryList['0']['id'])?>" class="news-cat"><?=$categoryList[0]['name']?></a>
                     </div>
                     <div class="news-card-info">
@@ -163,7 +177,7 @@ $videoPostContent=video_post_content($db,$offset);
                     <?php $postContent=post_content($db,$categoryList[14]['id'],$offset=0,$limit=8);
                     $catDesc=format_description(strip_tags($postContent[3]['description']),$numberOfWords=21);?>
                     <div class="news-card-img">
-                        <img src="post_images/<?=$postContent[3]['post_image']?>" alt="Image" class='small-img-cards-2col'>
+                        <a href="details-<?=base64_encode($postContent[3]['id'])?>"><img src="post_images/<?=$postContent[3]['post_image']?>" alt="Image" class='small-img-cards-2col'></a>
                         <a href="section-<?=base64_encode($categoryList['14']['id'])?>" class="news-cat"><?=$categoryList[14]['name']?></a>
                     </div>
                     <div class="news-card-info">
@@ -183,18 +197,20 @@ $videoPostContent=video_post_content($db,$offset);
                 <?php 
                 $postContent=post_content($db,$categoryList[5]['id'],$offset=0,$limit=8); 
                 echo '
-                <div class="news-card-two">
-                <div class="news-card-img">
-                    <img src="./post_images/'.$postContent[1]['post_image'].'" alt="Image">
-                    <a href="section-'.base64_encode($categoryList[5]['id']).'" class="news-cat">' .$categoryList[5]['name']. '</a>
-                </div>
-                <div class="news-card-info">
-                    <h3><a href="details-'.base64_encode($postContent['1']['id']).'">'.format_description($postContent[1]['title'], $numberOfWords=15).'</a></h3>
-                    <ul class="news-metainfo list-style">
-                        <li><i class="fi fi-rr-calendar-minus"></i><a href="#">'.$postContent[1]['created_on'].'</a></li>
-                    </ul>
-                </div>
-                </div>
+                <a href="details-'.base64_encode($postContent['1']['id']).'">
+                    <div class="news-card-two">
+                    <div class="news-card-img">
+                        <img src="./post_images/'.$postContent[1]['post_image'].'" alt="Image">
+                        <a href="section-'.base64_encode($categoryList[5]['id']).'" class="news-cat">' .$categoryList[5]['name']. '</a>
+                    </div>
+                    <div class="news-card-info">
+                        <h3><a href="details-'.base64_encode($postContent['1']['id']).'">'.format_description($postContent[1]['title'], $numberOfWords=15).'</a></h3>
+                        <ul class="news-metainfo list-style">
+                            <li><i class="fi fi-rr-calendar-minus"></i><a href="#">'.$postContent[1]['created_on'].'</a></li>
+                        </ul>
+                    </div>
+                    </div>
+                </a>
                 ';
                 ?>
 
@@ -212,19 +228,21 @@ $videoPostContent=video_post_content($db,$offset);
                     if($count<=1)
                     {
                     ?>
-                <div class="news-card-three">
-                    <div class="news-card-img" >
-                        <img src="./post_images/<?=$catImg?>" alt="Image" class="small-img-cards-3col">
+                    <div class="news-card-three">
+                        <div class="news-card-img" >
+                            <a href="details-<?=$catId?>">
+                            <img src="./post_images/<?=$catImg?>" alt="Image" class="small-img-cards-3col">
+                            </a>
+                        </div>
+                        <div class="news-card-info">
+                            <a href="section-<?=base64_encode($categoryList['14']['id'])?>" class="news-cat"><?=$categoryList[14]['name']?></a>
+                            <h3><a href="details-<?=$catId?>"><?= format_description($catTitle,12) ?></a></h3>
+                            <ul class="news-metainfo list-style">
+                                <li><i class="fi fi-rr-calendar-minus"></i><a href="#"><?=$catDate?></a></li>
+                                
+                            </ul>
+                        </div>
                     </div>
-                    <div class="news-card-info">
-                        <a href="section-<?=base64_encode($categoryList['14']['id'])?>" class="news-cat"><?=$categoryList[14]['name']?></a>
-                        <h3><a href="details-<?=$catId?>"><?= format_description($catTitle,12) ?></a></h3>
-                        <ul class="news-metainfo list-style">
-                            <li><i class="fi fi-rr-calendar-minus"></i><a href="#"><?=$catDate?></a></li>
-                            
-                        </ul>
-                    </div>
-                </div>
                 <?php
                     }
                 }
@@ -290,7 +308,9 @@ $videoPostContent=video_post_content($db,$offset);
                                             <div class="col-md-6">
                                             <div class="news-card-six">
                                                 <div class="news-card-img">
+                                                    <a href="details-<?=$catId?>">
                                                     <img src="./post_images/<?=$catImg?>" alt="Image">
+                                                    </a>
                                                     <a href="section-<?=base64_encode($categoryList[0]['id'])?>" class="news-cat">उत्तराखण्ड</a>
                                                 </div>
                                                 <div class="news-card-info">
@@ -338,7 +358,9 @@ $videoPostContent=video_post_content($db,$offset);
                                             <div class="col-md-6">
                                             <div class="news-card-six">
                                                 <div class="news-card-img">
-                                                    <img src="./post_images/<?=$catImg?>" alt="Image">
+                                                    <a href="details-<?=$catId?>">
+                                                        <img src="./post_images/<?=$catImg?>" alt="Image">
+                                                    </a>
                                                     <a href="section-<?=base64_encode($categoryList[16]['id'])?>" class="news-cat">देश</a>
                                                 </div>
                                                 <div class="news-card-info">
@@ -386,7 +408,9 @@ $videoPostContent=video_post_content($db,$offset);
                                             <div class="col-md-6">
                                             <div class="news-card-six">
                                                 <div class="news-card-img">
-                                                    <img src="./post_images/<?=$catImg?>" alt="Image">
+                                                    <a href="details-<?=$catId?>">
+                                                        <img src="./post_images/<?=$catImg?>" alt="Image">
+                                                    </a>
                                                     <a href="section-<?=base64_encode($categoryList[102]['id'])?>" class="news-cat">विदेश</a>
                                                 </div>
                                                 <div class="news-card-info">
@@ -409,6 +433,7 @@ $videoPostContent=video_post_content($db,$offset);
 
                                 </div>
                             </div>
+
                         </div>
                     </div>
                 </div>
@@ -444,7 +469,9 @@ $videoPostContent=video_post_content($db,$offset);
                                         ?>
                                             <div class="news-card-seven">
                                                 <div class="news-card-img">
-                                                    <img src="./post_images/<?=$catImg?>" alt="Image">
+                                                    <a href="details-<?=$catId?>">
+                                                        <img src="./post_images/<?=$catImg?>" alt="Image">
+                                                    </a>
                                                 </div>
                                                 <div class="news-card-info">
                                                     <!-- <a href="details-<?=$catId?>" class="news-cat">Lifestyle</a> -->
@@ -479,7 +506,9 @@ $videoPostContent=video_post_content($db,$offset);
                                         ?>
                                             <div class="news-card-seven">
                                                 <div class="news-card-img">
-                                                    <img src="./post_images/<?=$catImg?>" alt="Image">
+                                                    <a href="details-<?=$catId?>">
+                                                        <img src="./post_images/<?=$catImg?>" alt="Image">
+                                                    </a>
                                                 </div>
                                                 <div class="news-card-info">
                                                     <!-- <a href="business.html" class="news-cat">Lifestyle</a> -->
@@ -505,249 +534,6 @@ $videoPostContent=video_post_content($db,$offset);
     </div>
 
 
-    <!-- <div class="selected-news ptb-100">
-        <div class="container-fluid">
-            <div class="content-wrapper">
-                <div class="left-content">
-                    <div class="row align-items-end mb-40">
-                        <div class="col-md-7">
-                            <h2 class="section-title">Selected Posts<img class="section-title-img"
-                                    src="assets/img/section-img.webp" alt="Image"></h2>
-                        </div>
-                        <div class="col-md-5 text-md-end">
-                            <a href="business.html" class="link-one">View All News<i
-                                    class="flaticon-right-arrow"></i></a>
-                        </div>
-                    </div>
-                    <div class="row gx-45">
-                        <div class="col-xl-7">
-                            <div class="news-card-four">
-                                <img src="assets/img/news/news-31.webp" alt="Image">
-                                <div class="news-card-info">
-                                    <h3><a href="business-details.html">Kyrgios And Djokovic Agree To Post-match
-                                            Meal</a></h3>
-                                    <ul class="news-metainfo list-style">
-                                        <li><i class="fi fi-rr-calendar-minus"></i><a href="#">Apr 25,
-                                                2023</a></li>
-                                        <li><i class="fi fi-rr-clock-three"></i>15 Min Read</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="news-card-five">
-                                <div class="news-card-img">
-                                    <img src="assets/img/news/news-32.webp" alt="Image">
-                                    <a href="business.html" class="news-cat">Sports</a>
-                                </div>
-                                <div class="news-card-info">
-                                    <h3><a href="business-details.html">Muga Nemo Aptent Quaerat Explicabo Urna Ni Like
-                                            Ange</a></h3>
-                                    <p>Lorem ipsum or lipsum as it is sometmes known is dum text used in laying print,
-                                        graphic or web desi…</p>
-                                    <ul class="news-metainfo list-style">
-                                        <li><i class="fi fi-rr-calendar-minus"></i><a href="#">Feb 03,
-                                                2023</a></li>
-                                        <li><i class="fi fi-rr-clock-three"></i>15 Min Read</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="news-card-five">
-                                <div class="news-card-img">
-                                    <img src="assets/img/news/news-33.webp" alt="Image">
-                                    <a href="business.html" class="news-cat">Fashion</a>
-                                </div>
-                                <div class="news-card-info">
-                                    <h3><a href="business-details.html">Selective Focus Photography Of Orange Fox
-                                            Life</a></h3>
-                                    <p>Lorem ipsum or lipsum as it is sometmes known is dum text used in laying print,
-                                        graphic or web desi…</p>
-                                    <ul class="news-metainfo list-style">
-                                        <li><i class="fi fi-rr-calendar-minus"></i><a href="#">Apr 03,
-                                                2023</a></li>
-                                        <li><i class="fi fi-rr-clock-three"></i>15 Min Read</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-5">
-                            <div class="news-card-two">
-                                <div class="news-card-img">
-                                    <img src="assets/img/news/news-34.webp" alt="Image">
-                                    <a href="business.html" class="news-cat">Politics</a>
-                                </div>
-                                <div class="news-card-info">
-                                    <h3><a href="business-details.html">Beyond Good & Evil 2 Has Been In Development
-                                            Longer Than Literally Any Game, Ever</a></h3>
-                                    <ul class="news-metainfo list-style">
-                                        <li><i class="fi fi-rr-calendar-minus"></i><a href="#">Apr 15,
-                                                2023</a></li>
-                                        <li><i class="fi fi-rr-clock-three"></i>15 Min Read</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="news-card-three">
-                                <div class="news-card-img">
-                                    <img src="assets/img/news/news-35.webp" alt="Image">
-                                </div>
-                                <div class="news-card-info">
-                                    <a href="business.html" class="news-cat">Travel</a>
-                                    <h3><a href="business-details.html">World Trending Best 10 Website Travel Tips For
-                                            Runners Groups Of</a></h3>
-                                    <ul class="news-metainfo list-style">
-                                        <li><i class="fi fi-rr-calendar-minus"></i><a href="#">Apr 22,
-                                                2023</a></li>
-                                        <li><i class="fi fi-rr-clock-three"></i>15 Min Read</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="news-card-three">
-                                <div class="news-card-img">
-                                    <img src="assets/img/news/news-36.webp" alt="Image">
-                                </div>
-                                <div class="news-card-info">
-                                    <a href="business.html" class="news-cat">Business</a>
-                                    <h3><a href="business-details.html">How To Find The Right Template For Your Specific
-                                            Product</a></h3>
-                                    <ul class="news-metainfo list-style">
-                                        <li><i class="fi fi-rr-calendar-minus"></i><a href="#">Apr 15,
-                                                2023</a></li>
-                                        <li><i class="fi fi-rr-clock-three"></i>15 Min Read</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="news-card-three">
-                                <div class="news-card-img">
-                                    <img src="assets/img/news/news-37.webp" alt="Image">
-                                </div>
-                                <div class="news-card-info">
-                                    <a href="business.html" class="news-cat">Health</a>
-                                    <h3><a href="business-details.html">Life Health Continues To Spread Rapidly, Are
-                                            Many People</a></h3>
-                                    <ul class="news-metainfo list-style">
-                                        <li><i class="fi fi-rr-calendar-minus"></i><a href="#">Apr 16,
-                                                2023</a></li>
-                                        <li><i class="fi fi-rr-clock-three"></i>15 Min Read</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="promo-wrap">
-                                <div class="promo-card bg-f">
-                                    <img src="assets/img/promo-shape-2.webp" alt="Image" class="promo-shape">
-                                    <div class="promo-content">
-                                        <a href="index.php" class="logo"><img src="assets/img/logo-white.webp"
-                                                alt="Image"></a>
-                                        <p>The European languages are members of the same family.</p>
-                                    </div>
-                                    <div class="promo-img">
-                                        <img src="assets/img/promo-img.webp" alt="Image">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="sidebar">
-                    <div class="sidebar-widget">
-                        <h3 class="sidebar-widget-title">Social Links</h3>
-                        <ul class="social-widget list-style">
-                            <li>
-                                <a href="https://www.fb.com/" target="_blank">
-                                    <span><img src="assets/img/icons/facebook.svg" alt="Image"></span>
-                                    Facebook
-                                </a>
-                                <p>28 <br> Likes</p>
-                            </li>
-                            <li>
-                                <a href="https://www.twitter.com/" target="_blank">
-                                    <span><img src="assets/img/icons/twitter.svg" alt="Image"></span>
-                                    Twitter
-                                </a>
-                                <p>289k Followers</p>
-                            </li>
-                            <li>
-                                <a href="https://www.instagram.com/" target="_blank">
-                                    <span><img src="assets/img/icons/instagram.svg" alt="Image"></span>
-                                    Instagram
-                                </a>
-                                <p>231k Followers</p>
-                            </li>
-                            <li>
-                                <a href="https://www.pinterest.com/" target="_blank">
-                                    <span><img src="assets/img/icons/pinterest.svg" alt="Image"></span>
-                                    Pinterest
-                                </a>
-                                <p>28k Followers</p>
-                            </li>
-                            <li>
-                                <a href="https://www.youtube.com/" target="_blank">
-                                    <span><img src="assets/img/icons/youtube.svg" alt="Image"></span>
-                                    Youtube
-                                </a>
-                                <p>159k Subscribers</p>
-                            </li>
-                            <li>
-                                <a href="https://www.soundcloud.com/" target="_blank">
-                                    <span><img src="assets/img/icons/soundcloud.svg" alt="Image"></span>
-                                    Soundcloud
-                                </a>
-                                <p>31k Followers</p>
-                            </li>
-                            <li>
-                                <a href="https://www.behance.com/" target="_blank">
-                                    <span><img src="assets/img/icons/behance.svg" alt="Image"></span>
-                                    Behance
-                                </a>
-                                <p>28 Followers</p>
-                            </li>
-                            <li>
-                                <a href="https://www.vimeo.com/" target="_blank">
-                                    <span><img src="assets/img/icons/vimeo.svg" alt="Image"></span>
-                                    Vimeo
-                                </a>
-                                <p>55k Followers</p>
-                            </li>
-                            <li>
-                                <a href="https://www.telegram.com/" target="_blank">
-                                    <span><img src="assets/img/icons/telegram.svg" alt="Image"></span>
-                                    Telegram
-                                </a>
-                                <p>788k Followers</p>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="sidebar-widget">
-                        <div class="newsletter-widget">
-                            <h2>Newsletter</h2>
-                            <h6>Join 70,000 Subscribers</h6>
-                            <form action="#">
-                                <input type="email" placeholder="Email Address">
-                                <button type="submit">Subscribe<i class="flaticon-right-arrow-1"></i></button>
-                            </form>
-                            <p>By signing up, you agree to our <a href="privacy-policy.html">Privacy Policy</a></p>
-                        </div>
-                    </div>
-                    <div class="sidebar-widget">
-                        <h3 class="sidebar-widget-title">Popular Tags</h3>
-                        <ul class="tag-list list-style">
-                            <li><a href="news-by-tags.html">BUSINESS</a></li>
-                            <li><a href="news-by-tags.html">FOOD</a></li>
-                            <li><a href="news-by-tags.html">SCIENCE</a></li>
-                            <li><a href="news-by-tags.html">LIFESTYLE</a></li>
-                            <li><a href="news-by-tags.html">SPORTS</a></li>
-                            <li><a href="news-by-tags.html">PHOTO</a></li>
-                            <li><a href="news-by-tags.html">TECHNOLOGY</a></li>
-                            <li><a href="news-by-tags.html">CONTENT</a></li>
-                            <li><a href="news-by-tags.html">FEATURED</a></li>
-                            <li><a href="news-by-tags.html">AUDIO</a></li>
-                            <li><a href="news-by-tags.html">FASHION</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
-
 
     <div class="bg_gray popular-news pt-0 pb-100">
         <div class="container-fluid">
@@ -765,7 +551,9 @@ $videoPostContent=video_post_content($db,$offset);
                         <div class="col-12">
                             <div class="news-card-eleven">
                                 <div class="news-card-img">
-                                    <img src="./post_images/<?=$popularContent[0]['post_image']?>" alt="Image">
+                                    <a href="details-<?=base64_encode($popularContent[0]['id'])?>">
+                                        <img src="./post_images/<?=$popularContent[0]['post_image']?>" alt="Image">
+                                    </a>        
                                 </div>
                                 <div class="news-card-info">
                                     <div class="news-author">
@@ -780,14 +568,6 @@ $videoPostContent=video_post_content($db,$offset);
                                 <?=format_description($popularContent[0]['description'], $numberOfWords=55)?>  
                             </div>
                         </div>
-                        
-                        <!-- <div class="col-md-12">
-                            <div class="news-card-ten">
-                            
-                                
-                            </div>
-                        </div> -->
-                        
 
                     </div>
                 </div>
@@ -803,7 +583,9 @@ $videoPostContent=video_post_content($db,$offset);
                                 <div class="col-md-6">
                                     <div class="news-card-six">
                                         <div class="news-card-img">
-                                            <img src="./post_images/<?=$popularContent[$i]['post_image']?>" alt="Image">                                          
+                                            <a href="details-<?=base64_encode($popularContent[$i]['id'])?>">
+                                                <img src="./post_images/<?=$popularContent[$i]['post_image']?>" alt="Image">                                          
+                                            </a>
                                         </div>
                                         <div class="news-card-info">
                                             <div class="news-author">                                          
@@ -827,246 +609,6 @@ $videoPostContent=video_post_content($db,$offset);
             </div>
         </div>
     </div>
-
-
-    <!-- <div class="general-news ptb-100">
-        <div class="container-fluid">
-            <div class="content-wrapper">
-                <div class="left-content">
-                    <div class="row align-items-end mb-40">
-                        <div class="col-md-7">
-                            <h2 class="section-title">General News<img class="section-title-img"
-                                    src="assets/img/section-img.webp" alt="Image"></h2>
-                        </div>
-                        <div class="col-md-5 text-md-end">
-                            <a href="business.html" class="link-one">View All News<i
-                                    class="flaticon-right-arrow"></i></a>
-                        </div>
-                    </div>
-                    <div class="row justify-content-center">
-                        <div class="col-xl-6">
-                            <div class="news-card-twelve">
-                                <div class="news-card-img">
-                                    <img src="assets/img/news/news-20.webp" alt="Image">
-                                </div>
-                                <div class="news-card-info">
-                                    <a href="business.html" class="news-cat">Fashion</a>
-                                    <h3><a href="business-details.html">Is This The Beginning Of The End Of The
-                                            Internet?</a></h3>
-                                    <ul class="news-metainfo list-style">
-                                        <li><i class="fi fi-rr-calendar-minus"></i><a href="#">Feb 22,
-                                                2023</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-6">
-                            <div class="news-card-twelve">
-                                <div class="news-card-img">
-                                    <img src="assets/img/news/news-21.webp" alt="Image">
-                                </div>
-                                <div class="news-card-info">
-                                    <a href="business.html" class="news-cat">Politics</a>
-                                    <h3><a href="business-details.html">7 Steps To Get Professional Facial Results At
-                                            Home</a></h3>
-                                    <ul class="news-metainfo list-style">
-                                        <li><i class="fi fi-rr-calendar-minus"></i><a href="#">Feb 25,
-                                                2023</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-6">
-                            <div class="news-card-twelve">
-                                <div class="news-card-img">
-                                    <img src="assets/img/news/news-22.webp" alt="Image">
-                                </div>
-                                <div class="news-card-info">
-                                    <a href="business.html" class="news-cat">Inspiration</a>
-                                    <h3><a href="business-details.html">Creative Photography Ideas From Smart
-                                            Devices</a></h3>
-                                    <ul class="news-metainfo list-style">
-                                        <li><i class="fi fi-rr-calendar-minus"></i><a href="#">Feb 18,
-                                                2023</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-6">
-                            <div class="news-card-twelve">
-                                <div class="news-card-img">
-                                    <img src="assets/img/news/news-23.webp" alt="Image">
-                                </div>
-                                <div class="news-card-info">
-                                    <a href="business.html" class="news-cat">Politics</a>
-                                    <h3><a href="business-details.html">6 Romantic Places You Should Visit In 2023</a>
-                                    </h3>
-                                    <ul class="news-metainfo list-style">
-                                        <li><i class="fi fi-rr-calendar-minus"></i><a href="#">Feb 20,
-                                                2023</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-6">
-                            <div class="news-card-twelve">
-                                <div class="news-card-img">
-                                    <img src="assets/img/news/news-24.webp" alt="Image">
-                                </div>
-                                <div class="news-card-info">
-                                    <a href="business.html" class="news-cat">Sports</a>
-                                    <h3><a href="business-details.html">The Best Place To Celebrate Birthday And
-                                            Music</a></h3>
-                                    <ul class="news-metainfo list-style">
-                                        <li><i class="fi fi-rr-calendar-minus"></i><a href="#">Feb 27,
-                                                2023</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-6">
-                            <div class="news-card-twelve">
-                                <div class="news-card-img">
-                                    <img src="assets/img/news/news-25.webp" alt="Image">
-                                </div>
-                                <div class="news-card-info">
-                                    <a href="business.html" class="news-cat">Business</a>
-                                    <h3><a href="business-details.html">Splurge Or Save Last Minute Pampering Gift
-                                            Ideas</a></h3>
-                                    <ul class="news-metainfo list-style">
-                                        <li><i class="fi fi-rr-calendar-minus"></i><a href="#">Feb 18,
-                                                2023</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="ad-section">
-                        <p>SPONSORED AD</p>
-                    </div>
-                    <div class="promo-wrap">
-                        <div class="promo-card-two">
-                            <img src="assets/img/promo-shape-1.webp" alt="Image" class="promo-shape">
-                            <div class="promo-content">
-                                <a href="index.php" class="logo">
-                                    <img class="logo-light" src="assets/img/logo.webp" alt="Image">
-                                    <img class="logo-dark" src="assets/img/logo-white.webp" alt="Image">
-                                </a>
-                                <p>The European languages are members of the same family separ existence is a Baxo. For
-                                    science, music, sport, etc.</p>
-                            </div>
-                            <img src="assets/img/promo-img-2.webp" alt="Image" class="promo-img">
-                        </div>
-                    </div>
-                </div>
-                <div class="sidebar">
-                    <div class="sidebar-widget-two">
-                        <div class="contact-widget">
-                            <img src="assets/img/contact-bg.svg" alt="Image" class="contact-shape">
-                            <a href="index.php" class="logo">
-                                <img class="logo-light" src="assets/img/logo.webp" alt="Image">
-                                <img class="logo-dark" src="assets/img/logo-white.webp" alt="Image">
-                            </a>
-                            <p>Mauris mattis auctor cursus. Phasellus iso tellus tellus, imperdiet ut imperdiet eu,
-                                noiaculis a sem Donec vehicula luctus nunc in laoreet Aliquam</p>
-                            <ul class="social-profile list-style">
-                                <li><a href="https://www.fb.com/" target="_blank"><i
-                                            class="flaticon-facebook-1"></i></a></li>
-                                <li><a href="https://www.twitter.com/" target="_blank"><i
-                                            class="flaticon-twitter-1"></i></a></li>
-                                <li><a href="https://www.instagram.com/" target="_blank"><i
-                                            class="flaticon-instagram-2"></i></a></li>
-                                <li><a href="https://www.linkedin.com/" target="_blank"><i
-                                            class="flaticon-linkedin"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="sidebar-widget">
-                        <h3 class="sidebar-widget-title">Popular Posts</h3>
-                        <div class="pp-post-wrap">
-                            <div class="news-card-one">
-                                <div class="news-card-img">
-                                    <img src="assets/img/news/news-thumb-4.webp" alt="Image">
-                                </div>
-                                <div class="news-card-info">
-                                    <h3><a href="business-details.html">Bernie Nonummy Pelopai Iatis Eum Litora</a></h3>
-                                    <ul class="news-metainfo list-style">
-                                        <li><i class="fi fi-rr-calendar-minus"></i><a href="#">Apr 22,
-                                                2023</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="news-card-one">
-                                <div class="news-card-img">
-                                    <img src="assets/img/news/news-thumb-5.webp" alt="Image">
-                                </div>
-                                <div class="news-card-info">
-                                    <h3><a href="business-details.html">How Youth Viral Diseases May The Year 2023</a>
-                                    </h3>
-                                    <ul class="news-metainfo list-style">
-                                        <li><i class="fi fi-rr-calendar-minus"></i><a href="#">Apr 23,
-                                                2023</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="news-card-one">
-                                <div class="news-card-img">
-                                    <img src="assets/img/news/news-thumb-6.webp" alt="Image">
-                                </div>
-                                <div class="news-card-info">
-                                    <h3><a href="business-details.html">Man Wearing Black Pullover Hoodie To Smoke</a>
-                                    </h3>
-                                    <ul class="news-metainfo list-style">
-                                        <li><i class="fi fi-rr-calendar-minus"></i><a href="#">Apr 14,
-                                                2023</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="news-card-one">
-                                <div class="news-card-img">
-                                    <img src="assets/img/news/news-thumb-7.webp" alt="Image">
-                                </div>
-                                <div class="news-card-info">
-                                    <h3><a href="business-details.html">First Prototype Flight Using Kinetic Launch
-                                            System</a></h3>
-                                    <ul class="news-metainfo list-style">
-                                        <li><i class="fi fi-rr-calendar-minus"></i><a href="#">Apr 07,
-                                                2023</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="news-card-one">
-                                <div class="news-card-img">
-                                    <img src="assets/img/news/news-thumb-8.webp" alt="Image">
-                                </div>
-                                <div class="news-card-info">
-                                    <h3><a href="business-details.html">Beauty Queens Need Material & Products</a></h3>
-                                    <ul class="news-metainfo list-style">
-                                        <li><i class="fi fi-rr-calendar-minus"></i><a href="#">Apr 03,
-                                                2023</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="news-card-one">
-                                <div class="news-card-img">
-                                    <img src="assets/img/news/news-thumb-9.webp" alt="Image">
-                                </div>
-                                <div class="news-card-info">
-                                    <h3><a href="business-details.html">That Woman Comes From Heaven Look Like Angel</a>
-                                    </h3>
-                                    <ul class="news-metainfo list-style">
-                                        <li><i class="fi fi-rr-calendar-minus"></i><a href="#">Apr 01,
-                                                2023</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
-
 
     <div class="video-news-wrap pt-5 pb-75">
         <div class="container-fluid">
@@ -1251,8 +793,9 @@ $videoPostContent=video_post_content($db,$offset);
                                     ?>
                                         <div class="news-card-five">
                                             <div class="news-card-img">
-                                                <img src="post_images/<?=$sliderContent[$i]['post_image']?>" alt="Image">
-                                                
+                                                <a href="details-<?=base64_encode($sliderContent[$i]['id'])?>">
+                                                    <img src="post_images/<?=$sliderContent[$i]['post_image']?>" alt="Image">
+                                                </a>
                                             </div>
                                             <div class="news-card-info">
                                                 <h3><a href="details-<?=base64_encode($sliderContent[$i]['id'])?>"><?=format_description($sliderContent[$i]['title'], $numberOfWords=15)?></a></h3>
@@ -1273,7 +816,9 @@ $videoPostContent=video_post_content($db,$offset);
 
                             <div class="news-card-two">
                                 <div class="news-card-img">
-                                    <img src="./post_images/<?=$sliderContent[8]['post_image']?>" alt="Image">                                    
+                                    <a href="details-<?= base64_encode( $sliderContent[8]['id'])?>">
+                                        <img src="./post_images/<?=$sliderContent[8]['post_image']?>" alt="Image"> 
+                                    </a>                                   
                                 </div>
 
                                 <div class="news-card-info">
@@ -1287,7 +832,9 @@ $videoPostContent=video_post_content($db,$offset);
 
                             <div class="news-card-three">
                                 <div class="news-card-img">
-                                    <img src="./post_images/<?=$sliderContent[9]['post_image']?>" alt="Image">                                    
+                                    <a href="details-<?= base64_encode( $sliderContent[9]['id'])?>">
+                                        <img src="./post_images/<?=$sliderContent[9]['post_image']?>" alt="Image"> 
+                                    </a>                                   
                                 </div>
                                 <div class="news-card-info">
                                     <h3><a href="details-<?= base64_encode( $sliderContent[9]['id'])?>"><?=format_description($sliderContent[9]['title'], $numberOfWords)?></a></h3>
@@ -1298,7 +845,9 @@ $videoPostContent=video_post_content($db,$offset);
                             </div>
                             <div class="news-card-three">
                                 <div class="news-card-img">
-                                    <img src="./post_images/<?=$sliderContent[10]['post_image']?>" alt="Image">                                    
+                                    <a href="details-<?= base64_encode( $sliderContent[10]['id'])?>">
+                                        <img src="./post_images/<?=$sliderContent[10]['post_image']?>" alt="Image">
+                                    </a>                                    
                                 </div>
                                 <div class="news-card-info">
                                     <h3><a href="details-<?= base64_encode( $sliderContent[10]['id'])?>"><?=format_description($sliderContent[10]['title'], $numberOfWords)?></a></h3>

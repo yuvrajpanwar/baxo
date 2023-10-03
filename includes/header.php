@@ -63,7 +63,7 @@ $categoryList=category_listing($db);
                 height: 171px;
             }
 
-            .news-card-two .news-card-img{
+            .news-card-two .news-card-img a{
                 width: 321px; /* Adjust the size to your desired width and height */
                 height: 230px;
                 overflow: hidden;
@@ -71,7 +71,7 @@ $categoryList=category_listing($db);
                 justify-content: center;
                 align-items: center;
             }
-            .news-card-two .news-card-img img
+            .news-card-two .news-card-img a img
             {
                 width: 100%;
                 height:100%;
@@ -79,7 +79,7 @@ $categoryList=category_listing($db);
                 object-position: center;
             }
 
-            .news-card-three .news-card-img{
+            .news-card-three .news-card-img a{
                 width: 120px; /* Adjust the size to your desired width and height */
                 height: 120px;
                 overflow: hidden;
@@ -87,7 +87,7 @@ $categoryList=category_listing($db);
                 justify-content: center;
                 align-items: center;
             }
-            .news-card-three .news-card-img img
+            .news-card-three .news-card-img a img
             {
                 width: 100%;
                 height:100%;
@@ -114,7 +114,7 @@ $categoryList=category_listing($db);
                 object-position: center;
             }
 
-            .news-card-five .news-card-img{
+            .news-card-five .news-card-img a:first-child{
                 width: 190px; /* Adjust the size to your desired width and height */
                 height: 120px;
                 overflow: hidden;
@@ -122,7 +122,7 @@ $categoryList=category_listing($db);
                 justify-content: center;
                 align-items: center;
             }
-            .news-card-five .news-card-img img
+            .news-card-five .news-card-img a:first-child img
             {
                 width: 100%;
                 height:100%;
@@ -131,7 +131,7 @@ $categoryList=category_listing($db);
             }
 
 
-            .news-card-six .news-card-img{
+            .news-card-six .news-card-img a:first-child{
                 overflow: hidden;
                 height:153px;
                 width:270px;
@@ -139,14 +139,14 @@ $categoryList=category_listing($db);
                 justify-content: center;
                 align-items: center;
             }
-            .news-card-six .news-card-img img
+            .news-card-six .news-card-img a:first-child img
             {
                 width: 100%;
                 height:100%;
                 object-fit: cover;
                 object-position: center
             }
-            .news-card-seven .news-card-img{
+            .news-card-seven .news-card-img a{
                 overflow: hidden;
                 height:90px;
                 width:160px;
@@ -154,7 +154,7 @@ $categoryList=category_listing($db);
                 justify-content: center;
                 align-items: center;
             }
-            .news-card-seven .news-card-img img
+            .news-card-seven .news-card-img a img
             {
                 width: 100%;
                 height:100%;
@@ -195,7 +195,7 @@ $categoryList=category_listing($db);
                 object-position: center;
             }
 
-            .news-card-eleven .news-card-img{
+            .news-card-eleven .news-card-img a{
                 overflow: hidden;
                 height:327px;
                 width:577px;
@@ -203,14 +203,14 @@ $categoryList=category_listing($db);
                 justify-content: center;
                 align-items: center;
             }
-            .news-card-eleven .news-card-img img
+            .news-card-eleven .news-card-img a img
             {
                 width: 100%;
                 height:100%;
                 object-fit: cover;
                 object-position: center;
             }
-            .news-card-thirteen .news-card-img{
+            .news-card-thirteen .news-card-img a{
                 overflow: hidden;
                 height:198px;
                 width:352px;
@@ -218,7 +218,7 @@ $categoryList=category_listing($db);
                 justify-content: center;
                 align-items: center;
             }
-            .news-card-thirteen .news-card-img img
+            .news-card-thirteen .news-card-img a img
             {
                 width: 100%;
                 height:100%;
